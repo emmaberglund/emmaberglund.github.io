@@ -1,0 +1,621 @@
+@import '_normalize';
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Gudea);
+@font-face {
+    font-family: 'Indie Flower';
+    src: url(../font/IndieFlower.ttf);
+
+}
+
+@font-face {
+    font-family: 'Gudea';
+    src: url(../font/Gudea-Regular.otf);
+
+}
+
+$fontstack: myriad-hebrew, sans-serif;
+$grey-color: #c3c3c3;
+$pink-color: #d618c0;
+$border-color: rgba(0, 0, 0, 0.55);
+
+
+body {
+    background-color: #f7f8f8;
+    margin: 0;
+    p {
+        font-family: 'Gudea', myriad-hebrew, sans-serif;
+       }
+    
+    h2 {
+        font-family: 'Indie Flower', sans-serif;
+        font-size: 3em;
+        color: $pink-color;
+    }
+
+}
+
+
+    
+.main-header {
+     padding-top: 15%;
+    height: 625px;
+    background: #212121 url('../images/bakgrund2.jpg') no-repeat center center;
+    background-color: #212121;
+    background-size: cover;
+    width: 100%;
+    z-index: 2;    
+}
+
+
+.main-logo {
+    
+    text-align: center;
+    background-color: (rgba(255, 255, 255, 0.13));
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    padding: 1%;
+    max-width: 100%;
+    
+        h1, h2 {
+         
+            a {
+                text-decoration: none;
+                color: $grey-color;
+                text-align: center;
+                font-family: $fontstack;
+                font-size: 2.5em;
+                padding: 5%
+             }
+        }
+    
+h2 {
+    font-size: 1em;
+}
+    
+}
+
+
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    
+    text-align: center;
+    padding: 3px 0;
+    display: none;
+    font-size: 1.5em;
+    background-color: $pink-color;
+    @media screen and (max-width: 480px) {
+    display: block;
+    }
+}
+    
+        /*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+    
+}
+
+    /*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+    background-color: (rgba(0, 0, 0, 0.67));
+}
+
+.main-nav {
+       position: fixed;
+        width: 100%; 
+        z-index: 1;
+        
+        padding-top: 0;
+        background-color: (rgba(0, 0, 0, 0.67));
+        
+        img {
+            float: right;
+            width: 25px;
+            padding: 5px 10px 5px 0;
+        
+             @media screen and (max-width: 480px) {
+                display: none;
+                
+        
+            }
+        }
+    
+            @media screen and (max-width: 480px) {
+            background-color: transparent;
+            
+            } 
+  
+            
+    ul {
+        list-style: none;
+        padding-top: 0;
+        padding: 0;
+        margin: 0; 
+        float: left;
+        @media screen and (max-width: 480px) {
+        display: none;
+        float: none;
+            
+    } 
+        
+        
+        li {
+            display: inline-block;
+            padding: 10px;
+            
+        }
+            
+            a {
+                text-decoration: none;
+                color: #c3c3c3;
+                font-family: $fontstack;
+                
+                &:hover {
+                color: $pink-color;
+                }
+            }
+        }
+    }
+    
+    
+
+
+
+.arrow-down {
+    
+	text-align: center;
+    
+	   img {
+            margin-bottom: 10px;
+            max-width: 5%;
+        }
+    
+        img:hover {
+            max-width: 5.2%;
+        
+        }
+    }
+
+
+.container {
+    text-align: center;
+    margin: 5% 15% 2% 15%;
+    
+    padding: 40px;
+    
+    
+    
+    
+    #intro, #about_me, #my_projects, #my_cv, #contact_me {
+        padding-top: 20px;
+            @media screen and (max-width: 480px) {
+            padding-top: 0;
+            }       
+    }
+    
+
+    .intro {
+        padding-top: 2px;
+        padding-bottom: 5%;
+        line-height: 2em;
+        border-bottom: solid 1px $border-color;
+
+        p {
+            font-size: 1.5em;}
+
+        h3 {
+            font-family: 'Indie Flower', sans-serif;
+            font-size: 5em;
+
+        }
+
+        a {
+            color: #d618c0;
+            text-decoration: none;
+                &:hover {font-weight: bold;
+                }
+        } 
+    }
+
+.projects {
+    
+    margin-top: 3;
+
+    padding-bottom: 10%;
+    border-bottom: solid 1px $border-color;
+   
+        img {
+            max-width: 32.6%;
+            padding: 0 0.1% 5% 0.1%;
+            
+            
+            }
+            
+        .display_mobile {
+            display: none;
+                @media screen and (min-width: 481px) and (max-width: 1024px) {
+                    display: inline;
+                }
+                @media screen and (max-width: 480px) {
+                    display: block;
+                }
+            
+                
+        }
+}
+
+      .about {
+        
+          p {
+            font-size: 1.2em;
+            text-align: left;
+          }
+
+          h2 {
+            text-align: center;
+            
+          }
+          
+          img {
+          max-width: 45%;
+        border-radius: 10%;
+              float: left;
+              padding: 15px;
+          }
+          
+          #emma {
+              float: left;}
+                
+                border-bottom: solid 1px $border-color;
+               
+                margin-top: 3%;
+                padding-bottom: 10%;
+            }
+
+    .contact {
+        
+   
+        p {
+            font-size: 1.2em;
+        }
+        border-bottom: solid 1px $border-color;
+        margin-top: 3%;
+        padding-bottom: 10%;
+        
+        a {
+            color: $pink-color;
+            text-decoration: none;
+            
+            &:hover {
+                font-weight: bold;
+            }
+        }
+        
+        img {
+            margin:auto;
+            padding-top: 4%;
+            display: block;
+            max-width: 7%;
+            
+                @media screen and (max-width: 480px) {
+                    max-width: 15%;
+            
+                }
+                
+            }
+    }
+    
+    
+
+.thanks {
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    font-size: 4em; 
+        @media screen and (max-width: 480px) {
+            font-size: 2em;
+     }
+        @media screen and (min-width: 481px) and (max-width: 1024px) {
+            font-size: 3em;
+    }
+    
+     
+        #smiley {
+            color: $pink-color;
+    
+    }
+        
+   
+}
+    
+    #top {
+        
+    a {
+            font-size: 1em;
+            text-decoration: none;
+            color: $pink-color;
+        
+        }
+        
+        a:hover {
+            font-weight: bold;
+        
+        }
+    
+}
+
+}
+
+.main-footer {
+    text-align: left;
+	margin-top: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+ 	border-top: solid $grey-color  1px;
+    margin-left: 20px;
+    margin-right: 20px;
+        p {
+            color: #292727;
+            font-family: $fontstack;
+            
+            a {
+                text-decoration:none;
+                color: #292727;
+                
+                &:hover {
+                color: $pink-color;
+                }
+            }
+        }
+        
+    
+        
+    }
+
+
+
+
+   
+
+
+
+
+
+
+
+
+/*tablet */
+
+@media screen and (min-width: 481px) and (max-width: 1024px){
+    
+    body {
+        h2 {
+            font-size: 2.5em;
+        }
+    }
+
+
+        .main-header {
+            padding-top: 25%;
+            height: 600px;
+            background: #212121 url('../images/bakgrund2.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 2;    
+        }
+
+        .main-logo {
+
+            text-align: center;
+            background-color: (rgba(255, 255, 255, 0.13));
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 10%;
+
+
+                h1, h2 {
+                 padding: 1%;
+                  a {
+                        text-decoration: none;
+                        color: $grey-color;
+
+                        font-family: $fontstack;
+                        font-size: 1.5em;
+                     }
+                }
+
+        h2 {
+            font-size: 1em;
+        }
+        }
+
+        .main-nav {
+               position: fixed;
+                width: 100%; 
+                z-index: 1;
+
+                padding-top: 0;
+                background-color: (rgba(0, 0, 0, 0.67));
+
+            ul {
+                list-style: none;
+                padding-top: 0;
+                padding: 0;
+                margin: 0; 
+
+                li {
+                    display: inline-block;
+                    padding: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: #c3c3c3;
+                        font-family: $fontstack;
+
+
+                        }
+                    }
+                }
+            }
+    
+
+    
+    
+.container {
+        margin: 5% 7% 1% 7%;
+            body {
+            h2 {
+                font-size: 2em;
+            }
+        }
+        
+            .intro {
+               
+                line-height: 1.7em;
+                
+
+                p {
+                    font-size: 1.2em;}
+
+                h3 {
+
+                    font-size: 3em;
+
+                }
+
+
+            }
+        
+            .projects {
+
+
+                img {
+                    max-width: 32.6%;
+
+                }
+                
+       
+           
+                .hidden_mobile { 
+                    
+                    display: none;}
+                    
+            }
+    
+     
+
+            .about {
+            text-align: left;
+            }
+            
+            
+        }
+    }
+
+
+
+
+
+/*mobile*/
+
+@media screen and (max-width: 480px) {
+    body {
+        h2 {
+            font-size: 2em;
+        }
+        p {
+          font-size: 1em;
+          }
+    }
+    
+    .main-logo {
+        margin-top: 20px;
+            h1 {
+                font-size:0.8em;
+            }
+            h2 {
+                font-size:0.5em;  
+            }
+    }
+
+    .main-header {
+        height: 390px; 
+        padding-top: 50%;
+    }
+
+    .main-nav {
+        
+        position: absolute;
+
+            ul li {
+                font-size: 85%;
+                display: block;
+                text-align: center;
+                border-bottom: solid $grey-color 1px;
+            }
+    }
+    
+    .container {
+        margin: 5% 0 5% 0;
+    
+            #intro {
+                padding-top: 5px;
+            }
+
+            .intro {
+                
+                line-height: 2em;
+                border-bottom: solid 1px black;
+
+                p {
+                    font-size: 1.2em;}
+
+                h3 {
+
+                    font-size: 2.5em;
+
+                }
+
+
+        }
+
+            .projects {
+                border-bottom: solid 1px black;
+                padding-bottom: 12%;
+                
+                
+                img {
+                    max-width: 100%;
+                    padding: 2% 0 2% 0;
+
+                }
+                
+            }
+        
+        
+        .hidden_mobile { 
+                    
+                    display: none;}
+                    
+            }
+    
+     
+            
+        .about {
+            text-align: left;
+            }
+        
+          
+
+            
+}
+
+
+
+
+
+
+
+
