@@ -18,7 +18,7 @@ function getMovieFeed() {
 
 
       
-        var parsing = JSON.parse(response);
+        var parsing = response;
         console.log(parsing);
         
         var movieList = "<ul id='ul'>";
