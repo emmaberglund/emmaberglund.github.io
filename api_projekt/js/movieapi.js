@@ -37,7 +37,7 @@ function getMovieFeed() {
         // annars visa bilden som en bild på sidan
         else
         {
-            movieList += "<img src=" + parsing.Poster + "alt='movie poster'>";
+            movieList += "<img src=" + parsing.Poster + ">";
 
         }
 
