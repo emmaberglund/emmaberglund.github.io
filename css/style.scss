@@ -249,8 +249,20 @@ input[type=checkbox]:checked ~ #menu{
             
                 
         }
-    #screen_dance {
-        padding-right: 2%;
+    #screen_dance, #berglunds {
+        margin-right: 2%;
+       
+    
+    }
+    
+    #screen_dance, #movie_finder {
+         margin-bottom: 2%;
+    
+    }
+    
+    #screen_dance, #movie_finder, #berglunds, #coming_soon {
+        box-shadow: 2px 1px 10px #888888
+    
     
     }
     

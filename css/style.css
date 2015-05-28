@@ -506,8 +506,12 @@ input[type=checkbox]:checked ~ #menu {
       @media screen and (max-width: 480px) {
         .container .projects .display_mobile {
           display: block; } }
-    .container .projects #screen_dance {
-      padding-right: 2%; }
+    .container .projects #screen_dance, .container .projects #berglunds {
+      margin-right: 2%; }
+    .container .projects #screen_dance, .container .projects #movie_finder {
+      margin-bottom: 2%; }
+    .container .projects #screen_dance, .container .projects #movie_finder, .container .projects #berglunds, .container .projects #coming_soon {
+      box-shadow: 2px 1px 10px #888888; }
   .container .about {
     border-bottom: solid 1px rgba(0, 0, 0, 0.55);
     margin-top: 3%;
