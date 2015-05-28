@@ -39,7 +39,8 @@ body {
 .main-header {
      padding-top: 15%;
     height: 625px;
-    background: #212121 url('../images/bakgrund2_liten.jpg') no-repeat center center;
+    background: #212121 url('../images/berg.jpg') no-repeat;
+    background-position: bottom;
     background-color: #212121;
     background-size: cover;
     width: 100%;
@@ -50,7 +51,7 @@ body {
 .main-logo {
     
     text-align: center;
-    background-color: (rgba(255, 255, 255, 0.13));
+    /*background-color: (rgba(255, 255, 255, 0.13));*/
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 10%;
@@ -61,7 +62,7 @@ body {
          
             a {
                 text-decoration: none;
-                color: $grey-color;
+                color: rgba(38, 38, 36, 0.75);
                 text-align: center;
                 font-family: $fontstack;
                 font-size: 2.5em;

@@ -14,21 +14,21 @@
             <label for="show-menu" class="show-menu">&#9776;</label>
                 <input type="checkbox" id="show-menu" role="button">
                     <ul id="menu">
-                        <li><a href="#about_me">ABOUT</a></li>
-                        <li><a href="#my_projects">PROJECTS</a></li>
+                        <li><a href="#about_me" class="smoothScroll">ABOUT</a></li>
+                        <li><a href="#my_projects" class="smoothScroll">PROJECTS</a></li>
                         
-                        <li><a href="#contact_me">CONTACT</a></li>
+                        <li><a href="#contact_me" class="smoothScroll">CONTACT</a></li>
                     </ul>
             <a href="http://se.linkedin.com/pub/emma-berglund/85/8b5/735/" title="Linked In"><img src="images/linked_in.png" alt="Linked In image"></a>
         </nav>
        
-        <header class="main-header" id="main-header">
+        <a name="toppis"></a><header class="main-header" id="main-header">
             <div class="main-logo" id="main-logo">
                 <h1><a href="index.html">EMMA BERGLUND</a></h1>
                 <h2><a href="index.html">Front End Developer in the Making</a></h2>
             </div>
             
-            <div class="arrow-down"><a href="#intro"><img src="images/pil.png" alt="Picture of arrow. Click and go to Welcome"></a></div>
+            <div class="arrow-down"><a href="#intro" class="scroll"><img src="images/pil.png" alt="Picture of arrow. Click and go to Welcome"></a></div>
         </header>
         <div class="container">
            <div class="intro" id="intro">
@@ -41,7 +41,7 @@
             </div>
 
 
-            <div class="projects" id="my_projects">
+            <a name="my_projects"></a><div class="projects" id="my_projects">
                 <h2>Projects</h2>
                 
                 <a href ="http://www.screendancefestival.com"><img src="images/screen_dance.jpg" alt="ScreenDance Festival project" id="screen_dance" onmouseover="this.src='images/screen_dance_hover2.jpg'" onmouseout="this.src='images/screen_dance.jpg'" class="hidden_mobile"><img src="images/screen_dance.jpg" alt="ScreenDance Festival project" id="screen_dance" class="display_mobile"></a>
@@ -57,14 +57,14 @@
           
 
 
-            <div class="about" id="about_me">
+            <a name="about_me"></a><div class="about" id="about_me">
                 <h2>About Me</h2>
             <p><img src="images/emma2.jpg" alt="Portrait of Emma Berglund">Well, let me introduce myself a bit more. I'm 25 years old and I live in Stockholm, Sweden.<br><br> In August 2014 I started the Front-End-Developement program in Nackademin. I will be finished in June 2016.<br><br> Besides web-development I also love photography. Last year I took some courses to improve my skills.<br><br> Before that I studied journalism for three years. My program was called Journalism and Multimedia, which means that we didn't only write articles. We also did radio  and TV, and also learned some basic web-design. I worked as a journalist for about a year, as a video-photographer and editor.<br><br> My ambission is to use these multi-skills to build awesome websites in the very near future.</p> 
             </div>
 
           
 
-            <div class="contact" id="contact_me">
+            <a name="contact_me"></a><div class="contact" id="contact_me">
                 <h2>Contact</h2>
                 <p>Feel free to contact me if you have any questions or if you have a cool project you need help with. </p>
                 
@@ -89,7 +89,7 @@
 
 
             <h2 class="thanks">Thanks for Stopping By! <span id="smiley"> :)</span></h2>
-            <p id="top"><a href="#main-header">Back to Top</a></p>
+            <p id="top"><a href="#toppis" class="smoothScroll">Back to Top</a></p>
 
 
           
@@ -118,8 +118,9 @@
     
     
     
-    
-    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/smoothscroll.js"></script>
     
     
     
