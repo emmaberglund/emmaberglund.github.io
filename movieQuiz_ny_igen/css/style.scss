@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Death'; src: url('../fonts/deathrattlebb_reg.ttf');
+}
+
+.hidden {
+  display: none;
+    height: 0;
+
+}
+.body{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+h1{
+  font-size: 250px;
+  //font-family: "Death", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 50px;
+  color: black;
+}
+h2{
+  //font-family: Death;
+  font-size: 100px;
+}
+
+
+#answers button{
+  margin-right: 10px;
+}
+#game button{
+  margin-right: 10px;
+  //background-color: black;
+  //color: white;
+}
+
+
+.movieStyle{
+  position: relative;
+  text-align: center;
+  width: 420px;
+  height: 315px;
+  display: block;
+  margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+
+.showBorder{
+  box-shadow: inset 0px 42px 0px -1px black,
+  inset 0px -42px 0px -1px black;
+  z-index: 1;
+  width: 420px;
+  height: 315px;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+ // margin-left: 3px;
+
+}
+iframe{
+  border: none;
+}
+
+.show {
+    display: block;
+
+}
+.correct{
+  background-color: green;
+}
+.wrong{
+  background-color: #ff2d28;
+}
