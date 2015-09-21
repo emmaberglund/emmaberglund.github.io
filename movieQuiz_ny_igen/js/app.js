@@ -9,7 +9,9 @@ xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) //4 är när servern har svarat. Readystate är objektets stadie som det är i.
     {
 
-        startButton.setAttribute("class", "hidden")
+        startButton.setAttribute("class", "hidden");
+        document.getElementById("result").innerHTML= "";
+
         var movie;
         var gameInterval = 0;
         var points= 0;
@@ -45,6 +47,8 @@ xhr.onreadystatechange = function() {
         comedyButton.addEventListener("click", comedyGame);
 
 
+        romanceButton.setAttribute("class", "genrebutton");
+        comedyButton.setAttribute("class", "genrebutton");
 
         function romanceGame() {
 
@@ -106,14 +110,21 @@ xhr.onreadystatechange = function() {
                     answerFourButton.appendChild(answerFourText);
                     answers.appendChild(answerFourButton);
 
-                    
+                    answerOneButton.setAttribute("class", "answerbutton");
+                    answerTwoButton.setAttribute("class", "answerbutton");
+                    answerThreeButton.setAttribute("class", "answerbutton");
+                    answerFourButton.setAttribute("class", "answerbutton");
+
+
                     answerOneButton.addEventListener("click", clearMovie);
                     answerTwoButton.addEventListener("click", clearMovie);
-                    answerThreeButton.addEventListener("click", clearMovie);
+                    answerThreeButton.addEventListener("click",clearMovie);
                     answerFourButton.addEventListener("click", clearMovie);
                     
+                    var timesUp;
+                    function tenSeconds(){
                     
-                    setTimeout(function(){
+                    timesUp = setTimeout(function(){
                         document.getElementById("movie").innerHTML = "";
                         answerOneButton.setAttribute("class", "hidden");
                         answerTwoButton.setAttribute("class", "hidden");
@@ -122,7 +133,12 @@ xhr.onreadystatechange = function() {
                         gameInterval += 1;
                         romanceGame();
                         
-                     }, 10000);
+                     }, 11000);
+                    }
+                    
+                    tenSeconds();
+                    
+                    
                     
                     movie.shift();
                 }
@@ -132,25 +148,86 @@ xhr.onreadystatechange = function() {
             }
 
             else {
-                alert("Du fick " + points + "  poäng!");
+                if(points == 5) {
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points. WOW AMAZING!' + '</p><br>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/applause.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/3AIWph8KSF3l6" width="480" height="376" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+                }
+                else if(points == 0){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points LOSER</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/rfskmSvktqSoo" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+
+                }
+                else if(points >=3 && points <=4){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points. Pretty good!</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/tada.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/9MGNxEMdWB2tq" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+                }
+                else if(points == 1){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' point LOSER</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/rfskmSvktqSoo" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+
+                }
+                else{
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points...not that good, maybe you should try again?</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/R0n44UHGGbmk8" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+
+                }
+
+
+                setTimeout(function(){
+
+                    var goAgainButton = document.createElement("button");
+                    goAgainButton.setAttribute("class", "showGoAgain");
+                    goAgainButton.innerText = "Go again";
+                    var result = document.getElementById("result");
+                    result.appendChild(goAgainButton);
+                    goAgainButton.addEventListener("click", xhr.onreadystatechange);
+
+                }, 0000);
+
+
             }
             
              
 
             function clearMovie() {
+                function myStopFunction() {
+                        clearTimeout(timesUp);
+                    }
                 
+                myStopFunction();
+
+                answerOneButton.removeEventListener('click', clearMovie);
+                answerTwoButton.removeEventListener('click', clearMovie);
+                answerThreeButton.removeEventListener('click', clearMovie);
+                answerFourButton.removeEventListener('click', clearMovie);
+
 
                 if(this.innerText == correctAnswer){
                     console.log("bra!!!");
                     points += 1;
                     console.log(this);
                     this.setAttribute("class", "correct");
+                    document.getElementById("audio").innerHTML = '<audio autoplay><source src="audio/correct.wav" type="audio/wav">Your browser does not support the audio element. </audio>';
+
                 }
                 else if(this.innerText != correctAnswer){
                     this.setAttribute("class", "wrong");
+                   document.getElementById("audio").innerHTML = '<audio autoplay><source src="audio/wrong.wav" type="audio/wav">Your browser does not support the audio element. </audio>';
+
 
                     if(answerOne == correctAnswer){
                         answerOneButton.setAttribute("class", "correct")
+
                     }
                     else if(answerTwo == correctAnswer){
                         answerTwoButton.setAttribute("class", "correct")
@@ -163,6 +240,8 @@ xhr.onreadystatechange = function() {
                     }
 
                 }
+
+
 
                 setTimeout(function(){
 
@@ -181,7 +260,7 @@ xhr.onreadystatechange = function() {
                 
 
             }
-                                        
+
             
 
 
@@ -194,11 +273,12 @@ xhr.onreadystatechange = function() {
 
         function comedyGame() {
 
-
             /*Här byggs spelet*/
+
 
             romanceButton.setAttribute("class", "hidden");
             comedyButton.setAttribute("class", "hidden");
+
 
             if (gameInterval < 5) {
 
@@ -207,6 +287,9 @@ xhr.onreadystatechange = function() {
                 var randomMovie = movie[0];
 
                 if (randomMovie.genre == "Comedy") {
+
+
+
 
 
                     //var movieDiv = document.createElement("div");
@@ -249,12 +332,35 @@ xhr.onreadystatechange = function() {
                     answers.appendChild(answerFourButton);
 
 
+                    answerOneButton.setAttribute("class", "answerbutton");
+                    answerTwoButton.setAttribute("class", "answerbutton");
+                    answerThreeButton.setAttribute("class", "answerbutton");
+                    answerFourButton.setAttribute("class", "answerbutton");
 
 
                     answerOneButton.addEventListener("click", clearMovie);
                     answerTwoButton.addEventListener("click", clearMovie);
-                    answerThreeButton.addEventListener("click", clearMovie);
+                    answerThreeButton.addEventListener("click",clearMovie);
                     answerFourButton.addEventListener("click", clearMovie);
+
+                    var timesUp;
+                    function tenSeconds(){
+
+                        timesUp = setTimeout(function(){
+                            document.getElementById("movie").innerHTML = "";
+                            answerOneButton.setAttribute("class", "hidden");
+                            answerTwoButton.setAttribute("class", "hidden");
+                            answerThreeButton.setAttribute("class", "hidden");
+                            answerFourButton.setAttribute("class", "hidden");
+                            gameInterval += 1;
+                            comedyGame();
+
+                        }, 11000);
+                    }
+
+                    tenSeconds();
+
+
 
                     movie.shift();
                 }
@@ -264,33 +370,121 @@ xhr.onreadystatechange = function() {
             }
 
             else {
-                alert("Du fick " + counter + "  poäng!");
-            }
+                if(points == 5) {
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points. WOW AMAZING!' + '</p><br>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/applause.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/3AIWph8KSF3l6" width="480" height="376" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+                }
+                else if(points == 0){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points LOSER</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/rfskmSvktqSoo" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
 
-            function clearMovie() {
+                }
+                else if(points >=3 && points <=4){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points. Pretty good!</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/tada.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/9MGNxEMdWB2tq" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
+                }
+                else if(points == 1){
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' point LOSER</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/rfskmSvktqSoo" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
 
-                //console.log(correctAnswer)
-
-                if(this.innerText == correctAnswer){
-                    console.log("bra!!!");
-                    counter += 1;
+                }
+                else{
+                    document.getElementById("result").innerHTML = '<p>You got ' + points + ' points...not that good, maybe you should try again?</p>';
+                    document.getElementById("result").innerHTML += '<audio autoplay><source src="audio/sad_trombone.mp3" type="audio/mpeg">Your browser does not support the audio element. </audio>';
+                    document.getElementById("result").innerHTML += '<iframe src="//giphy.com/embed/R0n44UHGGbmk8" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>' + '<br>' ;
+                    movieDiv.setAttribute("class", "hidden");
 
                 }
 
 
-                document.getElementById("movie").innerHTML = "";
-                answerOneButton.setAttribute("class", "hidden");
-                answerTwoButton.setAttribute("class", "hidden");
-                answerThreeButton.setAttribute("class", "hidden");
-                answerFourButton.setAttribute("class", "hidden");
+                setTimeout(function(){
 
-                //shadow.setAttribute("class", "hidden");
+                    var goAgainButton = document.createElement("button");
+                    goAgainButton.setAttribute("class", "showGoAgain");
+                    goAgainButton.innerText = "Go again";
+                    var result = document.getElementById("result");
+                    result.appendChild(goAgainButton);
+                    goAgainButton.addEventListener("click", xhr.onreadystatechange);
 
-                gameInterval += 1;
-                comedyGame();
+                }, 0000);
 
 
             }
+
+
+
+            function clearMovie() {
+                function myStopFunction() {
+                    clearTimeout(timesUp);
+                }
+
+                myStopFunction();
+
+                answerOneButton.removeEventListener('click', clearMovie);
+                answerTwoButton.removeEventListener('click', clearMovie);
+                answerThreeButton.removeEventListener('click', clearMovie);
+                answerFourButton.removeEventListener('click', clearMovie);
+
+
+                if(this.innerText == correctAnswer){
+                    console.log("bra!!!");
+                    points += 1;
+                    console.log(this);
+                    this.setAttribute("class", "correct");
+                    document.getElementById("audio").innerHTML = '<audio autoplay><source src="audio/correct.wav" type="audio/wav">Your browser does not support the audio element. </audio>';
+
+                }
+                else if(this.innerText != correctAnswer){
+                    this.setAttribute("class", "wrong");
+                    document.getElementById("audio").innerHTML = '<audio autoplay><source src="audio/wrong.wav" type="audio/wav">Your browser does not support the audio element. </audio>';
+
+
+                    if(answerOne == correctAnswer){
+                        answerOneButton.setAttribute("class", "correct")
+
+                    }
+                    else if(answerTwo == correctAnswer){
+                        answerTwoButton.setAttribute("class", "correct")
+                    }
+                    else if(answerThree == correctAnswer){
+                        answerThreeButton.setAttribute("class", "correct")
+                    }
+                    else if(answerFour == correctAnswer){
+                        answerFourButton.setAttribute("class", "correct")
+                    }
+
+                }
+
+
+
+                setTimeout(function(){
+
+                    document.getElementById("movie").innerHTML = "";
+                    answerOneButton.setAttribute("class", "hidden");
+                    answerTwoButton.setAttribute("class", "hidden");
+                    answerThreeButton.setAttribute("class", "hidden");
+                    answerFourButton.setAttribute("class", "hidden");
+
+                    //shadow.setAttribute("class", "hidden");
+
+                    gameInterval += 1;
+                    comedyGame();
+                }, 1000);
+
+
+
+            }
+
+
+
 
 
         } //Slut comedyGame();

@@ -104,7 +104,7 @@
       "url": "https://www.youtube.com/v/qLC72S7PNio?start=48&end=58&autoplay=1",
       "title": "Superbad",
       "genre": "Comedy",
-      "answers": ["Juno", "Superbad", "Year One", "This is the end"],
+      "answers": ["Juno", "Superbad", "Year One", "This Is The end"],
       "correct": "Superbad"
     },
     {
@@ -118,7 +118,7 @@
       "url": "https://www.youtube.com/v/lRZ172XMLCQ?start=133&end=143&autoplay=1",
       "title": "Mean Girls",
       "genre": "Comedy",
-      "answers": ["Easy A", "13 going on 30", "Bring it on", "Mean Girls"],
+      "answers": ["Easy A", "13 Going On 30", "Bring it on", "Mean Girls"],
       "correct": "Mean Girls"
     },
     {
@@ -146,7 +146,7 @@
       "url": "https://www.youtube.com/v/vzRuKnb2uuY?start=7&end=17&autoplay=1",
       "title": "There's something About Mary",
       "genre": "Comedy",
-      "answers": ["Dumb and Dumber", "Me, Myself & Irene", "Theres something about Mary", "American Pie"],
-      "correct": "There's something About Mary"
+      "answers": ["Dumb and Dumber", "Me, Myself & Irene", "There's Something About Mary", "American Pie"],
+      "correct": "There's Something About Mary"
     }
   ]
