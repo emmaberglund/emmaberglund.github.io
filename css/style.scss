@@ -1,6 +1,7 @@
 @import '_normalize';
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 @import url(http://fonts.googleapis.com/css?family=Gudea);
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
 @font-face {
     font-family: 'Indie Flower';
     src: url(../font/IndieFlower.ttf);
@@ -25,7 +26,7 @@ body {
     p {
         font-family: 'Gudea', myriad-hebrew, sans-serif;
        }
-    
+
     h2 {
         font-family: 'Indie Flower', sans-serif;
         font-size: 3em;
@@ -35,7 +36,7 @@ body {
 }
 
 
-    
+
 .main-header {
      padding-top: 15%;
     height: 625px;
@@ -44,12 +45,12 @@ body {
     background-color: #212121;
     background-size: cover;
     width: 100%;
-    z-index: 2;    
+    z-index: 2;
 }
 
 
 .main-logo {
-    
+
     text-align: center;
     /*background-color: (rgba(255, 255, 255, 0.13));*/
     margin-left: 10%;
@@ -57,23 +58,24 @@ body {
     margin-bottom: 10%;
     padding: 1%;
     max-width: 100%;
-    
+
         h1, h2 {
-         
+
+
             a {
                 text-decoration: none;
                 color: rgba(38, 38, 36, 0.75);
                 text-align: center;
-                font-family: $fontstack;
+                font-family: 'Satisfy', cursive;
                 font-size: 2.5em;
                 padding: 5%
              }
         }
-    
+
 h2 {
     font-size: 1em;
 }
-    
+
 }
 
 
@@ -81,7 +83,7 @@ h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     color: #fff;
-    
+
     text-align: center;
     padding: 3px 0;
     display: none;
@@ -91,11 +93,11 @@ h2 {
     display: block;
     }
 }
-    
+
         /*Hide checkbox*/
 input[type=checkbox]{
     display: none;
-    
+
 }
 
     /*Show menu when invisible checkbox is checked*/
@@ -106,77 +108,76 @@ input[type=checkbox]:checked ~ #menu{
 
 .main-nav {
        position: fixed;
-        width: 100%; 
+        width: 100%;
         z-index: 1;
-        
+
         padding-top: 0;
-        background-color: (rgba(0, 0, 0, 0.67));
-        
+        background-color: black;
+
         img {
             float: right;
             width: 25px;
             padding: 5px 10px 5px 0;
-        
+
              @media screen and (max-width: 480px) {
                 display: none;
-                
-        
+
+
             }
         }
-    
+
             @media screen and (max-width: 480px) {
             background-color: transparent;
-            
-            } 
-  
-            
+
+            }
+
+
     ul {
         list-style: none;
         padding-top: 0;
         padding: 0;
-        margin: 0; 
+        margin: 0;
         float: left;
         @media screen and (max-width: 480px) {
         display: none;
         float: none;
-            
-    } 
-        
-        
+
+    }
+
+
         li {
             display: inline-block;
             padding: 10px;
-            
+
         }
-            
+
             a {
                 text-decoration: none;
                 color: #c3c3c3;
-                font-family: $fontstack;
-                
+                font-family: Gudea, sans-serif;
+
                 &:hover {
                 color: $pink-color;
                 }
             }
         }
     }
-    
-    
+
+
 
 
 
 .arrow-down {
-    
+
 	text-align: center;
-    
+
 	   img {
             margin-bottom: 10px;
             max-width: 5%;
         }
-    
+
         img:hover {
             max-width: 5.2%;
-        
         }
     }
 
@@ -184,19 +185,19 @@ input[type=checkbox]:checked ~ #menu{
 .container {
     text-align: center;
     margin: 5% 15% 2% 15%;
-    
+
     padding: 40px;
-    
-    
-    
-    
+
+
+
+
     #intro, #about_me, #my_projects, #my_cv, #contact_me {
         padding-top: 20px;
             @media screen and (max-width: 480px) {
             padding-top: 0;
-            }       
+            }
     }
-    
+
 
     .intro {
         padding-top: 2px;
@@ -218,27 +219,27 @@ input[type=checkbox]:checked ~ #menu{
             text-decoration: none;
                 &:hover {font-weight: bold;
                 }
-        } 
+        }
     }
 
 .projects {
-    
+
     margin-top: 3%;
     margin: 3% 0% 0% 0%;
 
     padding-bottom: 10%;
     border-bottom: solid 1px $border-color;
-   
+
         img {
             max-width: 48.5%;
-            
-            
-            
+
+
+
             }
-    
-   
-    
-            
+
+
+
+
         .display_mobile {
             display: none;
                 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -247,32 +248,32 @@ input[type=checkbox]:checked ~ #menu{
                 @media screen and (max-width: 480px) {
                     display: block;
                 }
-            
-                
+
+
         }
-    #screen_dance, #berglunds {
+    #screen_dance, #berglunds, #moviequiz {
         margin-right: 2%;
-       
-    
+
+
     }
-    
-    #screen_dance, #movie_finder {
+
+    #screen_dance, #movie_finder, #berglunds, #alexandra {
          margin-bottom: 2%;
-    
+
     }
-    
-    #screen_dance, #movie_finder, #berglunds, #coming_soon {
+
+    #screen_dance, #movie_finder, #berglunds, #coming_soon, #alexandra, #moviequiz {
         box-shadow: 2px 1px 10px #888888
-    
-    
+
+
     }
-    
-    
-    
+
+
+
 }
 
       .about {
-        
+
           p {
             font-size: 1.2em;
             text-align: left;
@@ -280,95 +281,105 @@ input[type=checkbox]:checked ~ #menu{
 
           h2 {
             text-align: center;
-            
+
           }
-          
+
           img {
           max-width: 45%;
         border-radius: 10%;
               float: left;
               padding: 15px;
           }
-          
+
           #emma {
               float: left;}
-                
+
                 border-bottom: solid 1px $border-color;
-               
+
                 margin-top: 3%;
                 padding-bottom: 10%;
             }
 
     .contact {
-        
-   
+
+
         p {
             font-size: 1.2em;
         }
         border-bottom: solid 1px $border-color;
         margin-top: 3%;
         padding-bottom: 10%;
-        
+
         a {
             color: $pink-color;
             text-decoration: none;
-            
+
             &:hover {
                 font-weight: bold;
             }
         }
-        
+
         img {
             margin:auto;
             padding-top: 4%;
             display: block;
-            max-width: 7%;
-            
+
+
                 @media screen and (max-width: 480px) {
                     max-width: 15%;
-            
+
                 }
-                
+
             }
     }
-    
-    
+
+
+    .contact-info{
+        list-style: none;
+        li{
+            display: inline-block;
+            padding: 46px;
+        }
+    }
+
+
+
 
 .thanks {
     text-align: center;
     padding-bottom: 5%;
     padding-top: 5%;
-    font-size: 4em; 
+    font-size: 4em;
         @media screen and (max-width: 480px) {
             font-size: 2em;
      }
         @media screen and (min-width: 481px) and (max-width: 1024px) {
             font-size: 3em;
     }
-    
-     
+
+
         #smiley {
             color: $pink-color;
-    
+
     }
-        
-   
+
+
 }
-    
+
     #top {
-        
+
     a {
             font-size: 1em;
             text-decoration: none;
             color: $pink-color;
-        
+
         }
-        
+
         a:hover {
             font-weight: bold;
-        
+
         }
-    
+
 }
 
 }
@@ -384,25 +395,25 @@ input[type=checkbox]:checked ~ #menu{
         p {
             color: #292727;
             font-family: $fontstack;
-            
+
             a {
                 text-decoration:none;
                 color: #292727;
-                
+
                 &:hover {
                 color: $pink-color;
                 }
             }
         }
-        
-    
-        
+
+
+
     }
 
 
 
 
-   
+
 
 
 
@@ -414,7 +425,7 @@ input[type=checkbox]:checked ~ #menu{
 /*tablet */
 
 @media screen and (min-width: 481px) and (max-width: 1024px){
-    
+
     body {
         h2 {
             font-size: 2.5em;
@@ -427,7 +438,7 @@ input[type=checkbox]:checked ~ #menu{
             height: 600px;
             background: #212121 url('../images/bakgrund2.jpg') no-repeat center center;
             background-size: cover;
-            z-index: 2;    
+            z-index: 2;
         }
 
         .main-logo {
@@ -457,7 +468,7 @@ input[type=checkbox]:checked ~ #menu{
 
         .main-nav {
                position: fixed;
-                width: 100%; 
+                width: 100%;
                 z-index: 1;
 
                 padding-top: 0;
@@ -467,7 +478,7 @@ input[type=checkbox]:checked ~ #menu{
                 list-style: none;
                 padding-top: 0;
                 padding: 0;
-                margin: 0; 
+                margin: 0;
 
                 li {
                     display: inline-block;
@@ -483,10 +494,10 @@ input[type=checkbox]:checked ~ #menu{
                     }
                 }
             }
-    
 
-    
-    
+
+
+
 .container {
         margin: 5% 7% 1% 7%;
             body {
@@ -494,11 +505,11 @@ input[type=checkbox]:checked ~ #menu{
                 font-size: 2em;
             }
         }
-        
+
             .intro {
-               
+
                 line-height: 1.7em;
-                
+
 
                 p {
                     font-size: 1.2em;}
@@ -511,7 +522,7 @@ input[type=checkbox]:checked ~ #menu{
 
 
             }
-        
+
             .projects {
 
 
@@ -519,22 +530,22 @@ input[type=checkbox]:checked ~ #menu{
                     max-width: 48%;
 
                 }
-                
-       
-           
-                .hidden_mobile { 
-                    
+
+
+
+                .hidden_mobile {
+
                     display: none;}
-                    
+
             }
-    
-     
+
+
 
             .about {
             text-align: left;
             }
-            
-            
+
+
         }
     }
 
@@ -553,24 +564,24 @@ input[type=checkbox]:checked ~ #menu{
           font-size: 1em;
           }
     }
-    
+
     .main-logo {
         margin-top: 20px;
             h1 {
                 font-size:0.8em;
             }
             h2 {
-                font-size:0.5em;  
+                font-size:0.5em;
             }
     }
 
     .main-header {
-        height: 390px; 
+        height: 390px;
         padding-top: 50%;
     }
 
     .main-nav {
-        
+
         position: absolute;
 
             ul li {
@@ -580,16 +591,16 @@ input[type=checkbox]:checked ~ #menu{
                 border-bottom: solid $grey-color 1px;
             }
     }
-    
+
     .container {
         margin: 5% 0 5% 0;
-    
+
             #intro {
                 padding-top: 5px;
             }
 
             .intro {
-                
+
                 line-height: 2em;
                 border-bottom: solid 1px black;
 
@@ -608,38 +619,30 @@ input[type=checkbox]:checked ~ #menu{
             .projects {
                 border-bottom: solid 1px black;
                 padding-bottom: 12%;
-                
-                
+
+
                 img {
                     max-width: 100%;
                     padding: 2% 0 2% 0;
 
                 }
-                
+
             }
-        
-        
-        .hidden_mobile { 
-                    
+
+
+        .hidden_mobile {
+
                     display: none;}
-                    
+
             }
-    
-     
-            
+
+
+
         .about {
             text-align: left;
             }
-        
-          
 
-            
+
+
+
 }
-
-
-
-
-
-
-
-
