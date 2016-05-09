@@ -603,7 +603,6 @@ input[type=checkbox]:checked ~ #menu {
 
   .main-logo {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.13);
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 10%; }
@@ -611,8 +610,6 @@ input[type=checkbox]:checked ~ #menu {
       padding: 1%; }
       .main-logo h1 a, .main-logo h2 a {
         text-decoration: none;
-        color: #c3c3c3;
-        font-family: myriad-hebrew, sans-serif;
         font-size: 1.5em; }
     .main-logo h2 {
       font-size: 1em; }
