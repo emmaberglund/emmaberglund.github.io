@@ -598,7 +598,6 @@ input[type=checkbox]:checked ~ #menu {
   .main-header {
     padding-top: 25%;
     height: 600px;
-    background: #212121 url("../images/bakgrund2.jpg") no-repeat center center;
     background-size: cover;
     z-index: 2; }
 
