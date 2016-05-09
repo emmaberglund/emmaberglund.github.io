@@ -508,7 +508,7 @@ input[type=checkbox]:checked ~ #menu {
       @media screen and (max-width: 480px) {
         .container .projects .display_mobile {
           display: block; } }
-    .container .projects #screen_dance, .container .projects #berglunds, .container .projects #moviequiz {
+    .container .projects #screen_dance, .container .projects #berglunds, .container .projects #moviequiz, .container .projects #fof {
       margin-right: 2%; }
     .container .projects #screen_dance, .container .projects #movie_finder, .container .projects #berglunds, .container .projects #alexandra, .container .projects #moviequiz, .container .projects #architect {
       margin-bottom: 2%; }
