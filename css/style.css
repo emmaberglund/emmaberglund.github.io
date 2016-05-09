@@ -510,7 +510,7 @@ input[type=checkbox]:checked ~ #menu {
           display: block; } }
     .container .projects #screen_dance, .container .projects #berglunds, .container .projects #moviequiz {
       margin-right: 2%; }
-    .container .projects #screen_dance, .container .projects #movie_finder, .container .projects #berglunds, .container .projects #alexandra, .container .projects #architect, .container .projects #fof {
+    .container .projects #screen_dance, .container .projects #movie_finder, .container .projects #berglunds, .container .projects #alexandra, .container .projects #moviequiz, .container .projects #architect {
       margin-bottom: 2%; }
     .container .projects #screen_dance, .container .projects #movie_finder, .container .projects #berglunds, .container .projects #coming_soon, .container .projects #alexandra, .container .projects #moviequiz, .container .projects #architect, .container .projects #fof {
       box-shadow: 2px 1px 10px #888888; }
